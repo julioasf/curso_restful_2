@@ -1,4 +1,5 @@
 import { Router } from 'express';
+import customersRouter from '@modules/customers/routes/customers.routes';
 import passwordRouter from '@modules/users/routes/password.routes';
 import productsRouter from '@modules/products/routes/products.routes';
 import profileRouter from '@modules/users/routes/profile.routes';
@@ -7,6 +8,7 @@ import usersRouter from '@modules/users/routes/users.routes';
 
 const routes = Router();
 
+routes.use('/customers', customersRouter);
 routes.use('/password', passwordRouter);
 routes.use('/products', productsRouter);
 routes.use('/profile', profileRouter);
