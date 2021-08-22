@@ -1,8 +1,10 @@
-import 'reflect-metadata';
+import 'reflect-metadata'; // Deve ser o primeiro import deste arquivo
+import 'dotenv/config';
 import express, { NextFunction, Request, Response } from 'express';
 import 'express-async-errors';
 import cors from 'cors';
 import { errors } from 'celebrate';
+import { pagination } from 'typeorm-pagination';
 import routes from './routes';
 import AppError from '@shared/errors/AppError';
 import '@shared/typeorm'; // Efetua a conexão com o bd conforme arquivo index.ts do diretório typeorm
@@ -12,6 +14,7 @@ const app = express();
 
 app.use(cors());
 app.use(express.json());
+app.use(pagination);
 app.use('/files', express.static(uploadConfig.directory)); // rota estática para acesso aos arquivos de upload (https://www.udemy.com/course/api-restful-de-vendas/learn/lecture/23872440#questions/13740580)
 app.use(routes);
 
