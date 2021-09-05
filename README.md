@@ -9,7 +9,7 @@ https://www.udemy.com/course/api-restful-de-vendas/learn/lecture/25624914#questi
 1.1 - Executar: $ yarn install
 
 2 - TypeORM:
-2.1 - Renomear o arquivo conforme o ambiente:
+2.1 - Copiar e renomear o arquivo conforme o ambiente:
   DEV:   /ormconfig.example_dev.json para /ormconfig.json;
   PROD:  /ormconfig.example_prod.json para /ormconfig.json;
 2.2 - Configurar os dados de conexão com o BD.
